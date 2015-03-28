@@ -16,8 +16,8 @@ set mouse=a
 
 "keep indent on new line
 set autoindent
-"set copyindent (testing)
 
+"set copyindent (testing)
 "force encoding
 set encoding=utf8
 
@@ -30,11 +30,18 @@ set noswapfile
 set incsearch
 set ignorecase
 
+"activate syntax highlight
+syntax on
+
 "fill buffer list
 nmap <F5> :args `git ls-files` <cr>
 
 "highlight trailing whitespace
-match ErrorMsg '\s\+$'
+:highlight ExtraWhitespace ctermbg=red guibg=red
+:match ExtraWhitespace /\s\+$/
 
 " >> Test
-syntax on
+"indent based folding
+set fdm=indent
+" redefine command mode colon for azerty and bépo keyboards
+nnoremap , :
