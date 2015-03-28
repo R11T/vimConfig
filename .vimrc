@@ -43,5 +43,8 @@ nmap <F5> :args `git ls-files` <cr>
 " >> Test
 "indent based folding
 set fdm=indent
+nnoremap <space> za
 " redefine command mode colon for azerty and bépo keyboards
 nnoremap , :
+"autocomplete native php function (use with Ctrl-x Ctrl-o)
+autocmd FileType php set omnifunc=phpcomplete#CompletePHP
