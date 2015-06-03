@@ -16,8 +16,8 @@ set mouse=a
 
 "keep indent on new line
 set autoindent
-
 "set copyindent (testing)
+
 "force encoding
 set encoding=utf8
 
@@ -40,11 +40,15 @@ nmap <F5> :args `git ls-files` <cr>
 :highlight ExtraWhitespace ctermbg=red guibg=red
 :match ExtraWhitespace /\s\+$/
 
-" >> Test
 "indent based folding
 set fdm=indent
 nnoremap <space> za
-" redefine command mode colon for azerty and bépo keyboards
+"… and avoid to many nested folds
+set fdn=2
+
+"redefine command mode colon for azerty and bépo keyboards
 nnoremap , :
+
+" >> Test
 "autocomplete native php function (use with Ctrl-x Ctrl-o)
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
